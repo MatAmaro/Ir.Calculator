@@ -4,5 +4,6 @@
     {
         void BeginApp();
         void CalculatorFlow();
+        void MenuFlow();
     }
 }

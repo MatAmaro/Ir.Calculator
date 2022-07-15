@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace IrCalculator.Presentation.Screm
 {
-    public class ScreamClient : IScreamClient
+    public class ScreenClient : IScreenClient
 
     {
         private readonly IClient _client;
 
-        public ScreamClient(IClient client)
+        public ScreenClient(IClient client)
         {
             _client = client;
         }
@@ -34,6 +34,7 @@ namespace IrCalculator.Presentation.Screm
                 else
                 {
                     ScreenPresenter.Show(Messages.Invalid);
+                    Console.ReadKey();
                 }                            
             }
            
@@ -57,6 +58,7 @@ namespace IrCalculator.Presentation.Screm
                 else
                 {
                     ScreenPresenter.Show(Messages.Invalid);
+                    Console.ReadKey();
                 }
             }
                 

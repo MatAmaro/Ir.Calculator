@@ -19,9 +19,10 @@ namespace IrCalculator.Presentation
             var aliquot = serviceProvider.GetService<IAliquot>();
             var deduction = serviceProvider.GetService<IDeduction>();
             var client = serviceProvider.GetService<IClient>();
-            var screamClient = serviceProvider.GetService<IScreamClient>();
-            var screamCalculator = serviceProvider.GetService<IScreamCalculator>();
+            var screamClient = serviceProvider.GetService<IScreenClient>();
+            var screamCalculator = serviceProvider.GetService<IScreenCalculator>();
             var mainFlow = serviceProvider.GetService<IMainFlow>();
+            var screamMenu = serviceProvider.GetService<IScreenMenu>();
             mainFlow.BeginApp();
 
 
@@ -35,9 +36,10 @@ namespace IrCalculator.Presentation
                 .AddScoped<IAliquot, Aliquot>()
                 .AddScoped<IDeduction, Deduction>()
                 .AddScoped<IClient, Client>()
-                .AddScoped<IScreamClient, ScreamClient>()
-                .AddScoped<IScreamCalculator, ScreamCalculator>()
-                .AddScoped<IMainFlow, MainFlow>();
+                .AddScoped<IScreenClient, ScreenClient>()
+                .AddScoped<IScreenCalculator, ScreenCalculator>()
+                .AddScoped<IMainFlow, MainFlow>()
+                .AddScoped<IScreenMenu, ScreenMenu>();
 
 
         }

@@ -6,16 +6,17 @@ using System.Threading.Tasks;
 
 namespace IrCalculator.Presentation.Screm
 {
-    public class ScreamCalculator : IScreamCalculator
+    public class ScreenCalculator : IScreenCalculator
     {
         public void PrintTax(Tuple<decimal, decimal, decimal> tax, string name)
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(name + Messages.Apresentation);
-            sb.AppendLine(Messages.TaxResult + tax.Item1.ToString());
-            sb.AppendLine(Messages.AliquotUsed + tax.Item2.ToString());
-            sb.AppendLine(Messages.DeductionUsed + tax.Item3.ToString());
+            sb.AppendLine(Messages.TaxResult + tax.Item1.ToString("C"));
+            sb.AppendLine(Messages.AliquotUsed + tax.Item2.ToString("P01"));
+            sb.AppendLine(Messages.DeductionUsed + tax.Item3.ToString("C"));
             sb.AppendLine(Messages.ThanksMessage);
+            sb.AppendLine(Messages.ReturnMessage);
             ScreenPresenter.Show(sb.ToString());
         }
     }
